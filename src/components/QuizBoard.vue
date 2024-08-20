@@ -61,6 +61,9 @@
       <!-- Quiz Completion -->
       <div v-else>
         <h4>Quiz Completed!</h4>
+        <div> 
+          <h4>Score: {{ correctAns }}/{{ questions.length }}</h4>
+        </div>
         <button class="btn btn-outline-light mt-3" @click="finishQuiz">
           <i class="bi bi-arrow-left-circle"></i> Finish
         </button>
@@ -155,6 +158,7 @@ export default {
     };
 
     const finishQuiz = () => {
+      setTimeout(1000);
       submit_Score();
       emit('back');
     };

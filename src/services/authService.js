@@ -4,8 +4,8 @@ import axios from 'axios';
 const client = new CognitoIdentityProviderClient({ 
     region: "us-east-1",
     credentials: {
-    accessKeyId: "AKIA4MTWKKOXSEH6FA6L",
-    secretAccessKey: "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"
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   } 
 });
 
