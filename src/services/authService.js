@@ -6,8 +6,8 @@ import axios from 'axios';
 const client = new CognitoIdentityProviderClient({ 
     region: "us-east-1",
     credentials: {
-    accessKeyId: process.env.ACCESS_KEY,
-    secretAccessKey: process.env.ECRET_ACCESS_KEY,
+    accessKeyId: process.env.VUE_APP_ACCESS_KEY || '',
+    secretAccessKey: process.env.VUE_APP_SECRET_ACCESS_KEY || '',
   } 
 });
 
