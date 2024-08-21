@@ -1,13 +1,13 @@
 import { CognitoIdentityProviderClient, InitiateAuthCommand, GlobalSignOutCommand ,SignUpCommand, AdminConfirmSignUpCommand, AliasExistsException  } from "@aws-sdk/client-cognito-identity-provider";
 // import { Axios, AxiosError } from "axios";
 import axios from 'axios';
-import {ACCESS_KEY,SECRET_ACCESS_KEY} from '../assets/AuthKey';
+// import {ACCESS_KEY,SECRET_ACCESS_KEY} from '../assets/AuthKey';
  
 const client = new CognitoIdentityProviderClient({ 
     region: "us-east-1",
     credentials: {
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_ACCESS_KEY,
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.ECRET_ACCESS_KEY,
   } 
 });
 
