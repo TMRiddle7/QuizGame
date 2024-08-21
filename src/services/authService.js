@@ -14,7 +14,7 @@ const client = new CognitoIdentityProviderClient({
 export const setCredentialsExpiry = () => {
   const now = new Date();
   // cerds set to expire in 4 hours after login.
-  localStorage.setItem("CredsExpireAt",toString(now.getTime() + 14400000));
+  localStorage.setItem("CredsExpireAt",(now.getTime() + 14400000).toString());
 }
 
 export const checkCredentialsExpiry = () => {
