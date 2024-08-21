@@ -91,6 +91,7 @@ export default {
     const router = useRouter();
     onMounted(() => {
       const username = localStorage.getItem('playerUsername');
+      console.log(process.env.ACCESS_KEY);
       if (username) {
         router.push('/home');
       }
