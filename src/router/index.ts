@@ -5,7 +5,7 @@ import GameView from '../views/GameView.vue';
 import ChatView from '../views/ChatView.vue';
 import SignUp from '../components/SignUp.vue';
 import LaunchView from '@/views/LaunchView.vue';
-import QuizView from '@/views/QuizView.vue';
+import ManageView from '@/views/ManageView.vue';
 import LeaderboardView from '@/views/LeaderboardView.vue';
 const routes = [
   { path: '/', component: MenuView },
@@ -14,6 +14,7 @@ const routes = [
   { path: '/chat', component: ChatView },
   { path: '/signup', component: SignUp },
   { path: '/leaderboard', component: LeaderboardView},
+  { path: '/manage', component: ManageView},
 ];
 
 const router = createRouter({

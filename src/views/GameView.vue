@@ -20,6 +20,8 @@
         <QuizBoard class="quizboarddiv vh-75 vw-100 mx-auto" v-if="selectedQuizID" :quizID="selectedQuizID" @back="deselectQuiz" />
       </div>
     </div>
+
+    <footer-comp></footer-comp>
   </main>
 </template>
 
@@ -29,11 +31,14 @@ import { defineComponent } from 'vue';
 import { getQuizzes } from '@/services/gameService';
 import QuizBoard from '@/components/QuizBoard.vue';
 import TopRibbon from '@/components/TopRibbon.vue';
+import FooterComp from '@/components/FooterComp.vue';
+
 export default defineComponent({
   name: 'GameView',
   components: {
     QuizBoard,
     TopRibbon,
+    FooterComp,
   },
   setup() {
     const quizzes = ref([]);
@@ -54,6 +59,11 @@ export default defineComponent({
     const deselectQuiz = () => {
       selectedQuizID.value = null;
     };
+
+    const checkConnect = () =>{
+      console.log('Connecting to WebSocket');
+
+    }
 
     onMounted(() => {
       fetchQuizzes();

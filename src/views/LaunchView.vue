@@ -16,8 +16,6 @@
                     <!-- <router-link to="/chat" class="btn btn-outline-dark">Chat</router-link> -->
                     <router-link to="/leaderboard" class="btn btn-outline-dark">LeaderBoard</router-link>
                     <router-link to="/manage" class="btn btn-outline-dark">Manage</router-link>
-
-                    <button class="btn btn-outlint-dark">Connect</button>
                 </div>
             </div>
         </div>

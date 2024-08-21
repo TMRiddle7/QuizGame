@@ -8,22 +8,22 @@ import fetch from 'node-fetch';
 
 global.fetch = fetch;
 
-    export const subClient = new ApolloClient({
-        link: new WebSocketLink({
-            uri: 'wss://murl5sdvjffqdastco4lptkyda.appsync-realtime-api.us-east-1.amazonaws.com/graphql', // Replace with your AppSync WebSocket endpoint
-            options: {
-              reconnect: true,
-              connectionParams: {
-                headers: {
-                  'x-api-key': 'da2-e62odg4hqvbfjjxk3tnawbbyhu', // Replace with your AppSync API key
-                },
-              },
-            },
-          }),   
-    cache: new InMemoryCache(),
-    })
-    console.log(subClient);
-    provideApolloClient(subClient);
+    // export const subClient = new ApolloClient({
+    //     link: new WebSocketLink({
+    //         uri: 'wss://murl5sdvjffqdastco4lptkyda.appsync-realtime-api.us-east-1.amazonaws.com/graphql', // Replace with your AppSync WebSocket endpoint
+    //         options: {
+    //           reconnect: true,
+    //           connectionParams: {
+    //             headers: {
+    //               'x-api-key': 'da2-e62odg4hqvbfjjxk3tnawbbyhu', // Replace with your AppSync API key
+    //             },
+    //           },
+    //         },
+    //       }),   
+    // cache: new InMemoryCache(),
+    // })
+    // //console.log(subClient);
+    // provideApolloClient(subClient);
 
   const client = new ApolloClient({
     link :new HttpLink({

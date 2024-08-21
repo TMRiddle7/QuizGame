@@ -1,6 +1,6 @@
 import { DynamoDBClient, ScanCommand ,PutItemCommand } from "@aws-sdk/client-dynamodb";
 import axios from 'axios';
-import { WebSocket } from "ws";
+
 
 const client = new DynamoDBClient({ region: "us-east-1" });
 
@@ -84,13 +84,5 @@ export const addNewQuiz = async (quizID, category, questions) => {
   } catch (error) {
     console.error('Error adding new quiz:', error);
     throw error; // Rethrow the error for further handling if needed
-  }
-}
-
-export const connectWS = async () =>{
-  const socket = new WebSocket('wss://lsq60vc9e9.execute-api.us-east-1.amazonaws.com/Dev');
-
-  socket.onopen = function(event){
-    console.log('Connected to WebSocket');
   }
 }

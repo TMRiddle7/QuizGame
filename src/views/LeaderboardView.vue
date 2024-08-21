@@ -1,5 +1,6 @@
 <template>
     <main>
+      <top-ribbon></top-ribbon>
       <div class="container mt-2">
         <div class="row">
           <div class="col-12 text-center mb-3">
@@ -29,14 +30,20 @@
           </div>
         </div>
       </div>
+      <footer-comp></footer-comp>
     </main>
   </template>
   
   <script>
   import { defineComponent, ref, onMounted } from 'vue';
   import { getScores } from '@/services/gameService';
-  
+  import TopRibbon from '@/components/TopRibbon.vue';
+  import FooterComp from '@/components/FooterComp.vue';
   export default defineComponent({
+    components:{
+      TopRibbon,
+      FooterComp
+    },
     setup() {
       const scoreList = ref([]);
   

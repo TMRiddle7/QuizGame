@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="../assets/logo.png" alt="Logo" width="72" height="72" class="me-2" />

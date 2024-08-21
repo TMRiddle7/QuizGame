@@ -22,6 +22,7 @@
               v-model="password"
               placeholder="Password"
               required
+              autocomplete
             />
             <label for="signinPassword">Password</label>
           </div>
@@ -43,13 +44,14 @@
     },
     methods: {
       async signIn() {
-        try {
-          const response = await signInService(this.username, this.password);
-          this.$emit('signin', { username: this.username, token: response.AccessToken });
-        } catch (error) {
-          console.error(error.message);
-        }
-      },
+    const response = await signInService(this.username, this.password);
+    if (response.success) {
+      this.$emit('signin', { username: this.username, token: response.AccessToken });
+    } else {
+      // Emit an error event to display the error message in the parent component
+      this.$emit('signin-error', response.error);
+    }
+  },
     },
   };
   </script>

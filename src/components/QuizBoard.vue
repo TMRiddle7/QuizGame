@@ -9,7 +9,7 @@
     </div>
 
     <!-- Quiz Content -->
-    <div v-else class="container-fluid vh-100">
+    <div v-else class="container-fluid h-100">
       <div v-if="currentQuestionIndex < questions.length" class="w-75">
         <div class="mb-4">
           <h4>{{ currentQuestion[0].S }}</h4>
@@ -59,8 +59,8 @@
       </div>
 
       <!-- Quiz Completion -->
-      <div v-else>
-        <h4>Quiz Completed!</h4>
+      <div v-else class="w-75">
+        <h4>Congratulations! Quiz Completed!</h4>
         <div> 
           <h4>Score: {{ correctAns }}/{{ questions.length }}</h4>
         </div>
@@ -69,22 +69,21 @@
         </button>
       </div>
 
-      <!-- Include ScoreBoard.vue in the right corner -->
-      <ScoreBoard 
+      <!-- Go Back Button -->
+      <button v-if="!questions.length" class="btn btn-outline-light mt-4" @click="goBack">
+        <i class="bi bi-arrow-left-circle"></i> Go Back
+      </button>
+
+      
+    </div>
+    <!-- Include ScoreBoard.vue in the right corner -->
+    <ScoreBoard 
         :questions="questions.length" 
         :answered="answered" 
         :correctAns="correctAns" 
         :wrongAns="wrongAns" 
         class="position-absolute top-0 end-0 m-3"/>
-
-      <!-- Go Back Button -->
-      <button v-if="!questions.length" class="btn btn-outline-light mt-4" @click="goBack">
-        <i class="bi bi-arrow-left-circle"></i> Go Back
-      </button>
-    </div>
-  <div v-if="subScore">
-    <h2>Submitting the score</h2>
-  </div>
+    <p class="Note"><strong>DO Not switch screen or go back, Quiz will not be submitted</strong></p>
   </div>
 </template>
 
@@ -189,14 +188,17 @@ export default {
 
 <style scoped>
 .quiz-board-container {
+  margin: 0;
   background-color: #343a40;
   color: white;
   width: 80%;
-  height: 75vh;
+  height: 82.5vh;
   padding: 2rem;
   text-align: center;
-  border-radius: 10px;
-  position: relative;
+  border-radius: 0px;
+  position: absolute;
+  top: 0px;
+  
 }
 
 .flash {
@@ -240,5 +242,13 @@ h4 {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+.Note{
+  font-size: xx-small;
+  color:white;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0;
 }
 </style>
