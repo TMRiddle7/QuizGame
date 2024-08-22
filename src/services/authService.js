@@ -24,7 +24,7 @@ export const checkCredentialsExpiry = () => {
     // If the item has expired, remove it from localStorage and return null
     localStorage.removeItem('playerUsername');
     localStorage.removeItem('accessToken');
-    localStorgae.setItem('isLoggedIn',false);
+    localStorage.setItem('isLoggedIn',false);
     return true;
   }
   else{
